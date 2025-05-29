@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neide Cabeleireira e Manicure</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/prositebr/image/refs/heads/main/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #fff0f6;
+            color: #7a276c;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #f78ca2 0%, #f9748f 50%, #fd868c 100%);
+            color: white;
+            padding: 1.5rem 0 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(247, 120, 162, 0.1);
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 0.4rem;
+            letter-spacing: 1px;
+        }
+        .top-image {
+            width: 300px;
+            max-width: 90vw;
+            margin: 1.2rem auto 0.5rem auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #e7548055;
+            display: block;
+        }
+        .telefone {
+            background-color: #fff;
+            color: #e75480;
+            display: inline-block;
+            padding: 0.5rem 1.1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 0.8rem 0 0.2rem 0;
+            font-size: 1.1rem;
+            border: 2px solid #e75480;
+        }
+        header p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        nav {
+            background-color: #e75480;
+            padding: 0.6rem 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 1.2rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.02rem;
+            letter-spacing: 0.5px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(247, 120, 162, 0.8), rgba(253, 134, 140, 0.9)), url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 1px 2px 6px #e75480b3;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 8px #e75480b3;
+        }
+        .cta-button {
+            background-color: #e75480;
+            color: white;
+            padding: 0.85rem 2.1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.14rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #f78ca2a2;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #c43c6c;
+        }
+        .servicos {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .servicos h2 {
+            margin-bottom: 2rem;
+            color: #c43c6c;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.6rem;
+            margin-top: 1rem;
+        }
+        .servico-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.6rem 1rem 1.3rem 1rem;
+            box-shadow: 0 3px 12px #f78ca256;
+            transition: transform 0.3s;
+            border: 2px solid #f8bbd0;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .servico-card:hover {
+            transform: translateY(-6px) scale(1.03);
+        }
+        .servico-card img,
+        .servico-card .img-escova-progressiva,
+        .servico-card .img-hidratacao,
+        .servico-card .img-corte,
+        .servico-card .img-quimica,
+        .servico-card .img-designer,
+        .servico-card .img-unhas {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #f78ca2;
+            margin-bottom: 1rem;
+            background: #fce4ec;
+        }
+        .img-escova-progressiva {
+            width: 130px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #f78ca2;
+            margin-bottom: 1rem;
+            background: #fce4ec;
+            box-shadow: 0 2px 8px #f78ca299;
+        }
+        .img-hidratacao {
+            width: 130px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #f78ca2;
+            margin-bottom: 1rem;
+            background: #fce4ec;
+            box-shadow: 0 2px 8px #f78ca299;
+        }
+        .img-corte {
+            width: 130px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #f78ca2;
+            margin-bottom: 1rem;
+            background: #fce4ec;
+            box-shadow: 0 2px 8px #f78ca299;
+        }
+        .img-quimica {
+            width: 130px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #f78ca2;
+            margin-bottom: 1rem;
+            background: #fce4ec;
+            box-shadow: 0 2px 8px #f78ca299;
+        }
+        .img-designer {
+            width: 130px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #f78ca2;
+            margin-bottom: 1rem;
+            background: #fce4ec;
+            box-shadow: 0 2px 8px #f78ca299;
+        }
+        .img-unhas {
+            width: 130px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #f78ca2;
+            margin-bottom: 1rem;
+            background: #fce4ec;
+            box-shadow: 0 2px 8px #f78ca299;
+        }
+        .servico-card h3 {
+            margin-bottom: 0.5rem;
+            color: #e75480;
+            font-size: 1.28rem;
+        }
+        .preco {
+            font-weight: bold;
+            font-size: 1.15rem;
+            color: #7a276c;
+            margin: 0.5rem 0 0.2rem 0;
+            display: none;
+        }
+        /* Rodapé */
+        footer {
+            background-color: #c43c6c;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem 1rem 1rem;
+            margin-top: 2.5rem;
+            position: relative;
+        }
+        .footer-contato {
+            margin-bottom: 1.1rem;
+        }
+        .footer-contato a {
+            color: #fff9c4;
+        }
+        .social-links {
+            margin-top: 1.1rem;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 0.6rem;
+            font-size: 1.6rem;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #fff9c4;
+        }
+        .anuncio-site {
+            background: #fff0f6;
+            color: #c43c6c;
+            border-radius: 10px;
+            margin: 2rem auto 1rem auto;
+            padding: 1.3rem 1rem 1.2rem 1rem;
+            max-width: 400px;
+            box-shadow: 0 2px 16px #f78ca244;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .anuncio-site strong {
+            font-size: 1.18rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .anuncio-site .cta-anuncio {
+            background: #e75480;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.7rem 1.8rem;
+            font-size: 1.09rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 2px 8px #f78ca2a2;
+        }
+        .anuncio-site .cta-anuncio:hover {
+            background: #c43c6c;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 0.3rem 0;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .servicos h2 {
+                font-size: 1.4rem;
+            }
+            .anuncio-site {
+                max-width: 95vw;
+            }
+            .top-image {
+                width: 95vw;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Neide Cabeleireira e Manicure</div>
+        <div class="telefone">📞 (11) 94285-7594</div>
+        <p>Beleza, cuidado e autoestima para mulheres em Itapecerica da Serra e região</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Imagem abaixo do menu -->
+    <img class="top-image" src="https://raw.githubusercontent.com/prositebr/image/refs/heads/main/Neidecabeleireiraemanicure.jpg" alt="Neide Cabeleireira e Manicure">
+    
+    <section class="hero" id="home">
+        <h1>Realce sua Beleza com Neide</h1>
+        <p>Especialista em cabelos femininos, manicure, designer de sobrancelhas e muito mais.<br>
+           Atendimento acolhedor e personalizado para você se sentir ainda mais linda!</p>
+        <button class="cta-button" onclick="window.location.href='https://wa.me/5511942857594'">AGENDAR PELO WHATSAPP</button>
+    </section>
+    
+    <section class="servicos" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <img class="img-escova-progressiva" src="https://raw.githubusercontent.com/prositebr/image/refs/heads/main/escovaprogressivaNeidecabeleireiraemanicure.jpg" alt="Escova Progressiva">
+                <h3>Escova Progressiva</h3>
+                <p>Cabelos mais lisos, alinhados e com brilho intenso. Procedimento seguro e profissional.</p>
+            </div>
+            <div class="servico-card">
+                <img class="img-hidratacao" src="https://github.com/prositebr/image/blob/main/hidrata%C3%A7%C3%A3oNeidecabeleireiraemanicure.jpg?raw=true" alt="Hidratação">
+                <h3>Hidratação</h3>
+                <p>Tratamentos profundos para cabelos macios, saudáveis e cheios de vida.</p>
+            </div>
+            <div class="servico-card">
+                <img class="img-corte" src="https://github.com/prositebr/image/blob/main/corteNeidecabeleireiraemanicure.jpg?raw=true" alt="Corte">
+                <h3>Corte Feminino</h3>
+                <p>Cortes modernos ou clássicos para valorizar sua beleza e seu estilo.</p>
+            </div>
+            <div class="servico-card">
+                <img class="img-quimica" src="https://github.com/prositebr/image/blob/main/quimicaNeidecabeleireiraemanicure.jpg?raw=true" alt="Química em Geral">
+                <h3>Química em Geral</h3>
+                <p>Coloração, luzes, relaxamento, selagem e procedimentos químicos para transformar seu visual.</p>
+            </div>
+            <div class="servico-card">
+                <img class="img-designer" src="https://github.com/prositebr/image/blob/main/designdesombrancelhasNeidecabeleireiraemanicure.jpg?raw=true" alt="Designer de Sobrancelhas">
+                <h3>Designer de Sobrancelhas</h3>
+                <p>Design personalizado para realçar o olhar e harmonizar o rosto.</p>
+            </div>
+            <div class="servico-card">
+                <img class="img-unhas" src="https://github.com/prositebr/image/blob/main/unhasNeidecabeleireiraemanicure.jpg?raw=true" alt="Manicure e Pedicure">
+                <h3>Manicure & Pedicure</h3>
+                <p>Unhas bem cuidadas e esmaltadas para valorizar ainda mais sua feminilidade.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="servicos" id="sobre">
+        <h2>Sobre Nós</h2>
+        <p style="max-width:600px; margin:0 auto; font-size:1.08rem; color:#7a276c;">
+            O salão <b>Neide Cabeleireira e Manicure</b> é referência em beleza feminina em Itapecerica da Serra. 
+            Com mais de 15 anos de experiência, oferecemos um atendimento acolhedor, personalizado e focado no bem-estar da mulher. 
+            Utilizamos produtos de qualidade para garantir os melhores resultados em cabelos, unhas e autoestima. 
+            Venha se sentir ainda mais bonita e confiante com a gente!
+        </p>
+    </section>
+    
+    <footer id="contato">
+        <div class="footer-contato">
+            <h3>Agende seu horário</h3>
+            <p>📞 (11) 94285-7594</p>
+            <p>📱 WhatsApp: <a href="https://wa.me/5511942857594" target="_blank">+55 11 94285-7594</a></p>
+            <p>📍 Rua Antonio de Albuquerque 09 - Aldeinha - Itapecerica da Serra/SP</p>
+        </div>
+        <div class="social-links">
+            <a href="#" title="Instagram">📸</a>
+            <a href="#" title="Facebook">📘</a>
+            <a href="#" title="WhatsApp">📱</a>
+        </div>
+        <div class="anuncio-site">
+            <strong>Tenha um site como este</strong>
+            <a class="cta-anuncio" href="https://wa.me/5511975655456" target="_blank">Clique Aqui</a>
+        </div>
+        <p style="margin-top:1.1rem;">&copy; 2025 Neide Cabeleireira e Manicure - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
